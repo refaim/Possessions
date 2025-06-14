@@ -17,7 +17,7 @@ License:
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ]]
 
-local POSSESSIONS_VERSION = "2.0.3";
+local POSSESSIONS_VERSION = "2.0.4";
 
 local CHARACTER_NUM_ITEMS = 19;
 
@@ -47,6 +47,7 @@ local Possessions_INVENTORY_SLOT_LIST = {
 };
 
 local realmName;
+local isRealmCrossFaction;
 local playerName;
 local playerFaction;
 
@@ -338,7 +339,7 @@ function Possessions_BuildDisplayIndices()
 	local _;
 
 	for index, value in pairs(PossessionsData[realmName]) do
-		 if (not value.faction or value.faction == playerFaction) then
+		 if (isRealmCrossFaction or not value.faction or value.faction == playerFaction) then
 			for index2, value2 in pairs(value.items) do
 				for index3, value3 in pairs(value2) do
 					if (value3[INDEX_LINK]) then
@@ -731,6 +732,11 @@ function Possessions_PlayerEnterWorld()
 		PossessionsData[realmName][playerName].faction = playerFaction;
      	Possessions_Inspect();
 		Possessions_ScanInv();
+
+		local playingOnTurtleWoW = getglobal("LFT") ~= nil
+		local probablyPlayingOnPvPRealm = UnitIsPVP("player")
+		isRealmCrossFaction = playingOnTurtleWoW and not probablyPlayingOnPvPRealm
+
 		hasEnteredOnce = true;
 	end
 	
