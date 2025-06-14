@@ -277,9 +277,9 @@
 					<OnEscapePressed>
 						this:ClearFocus();
 					</OnEscapePressed>
-					<OnEnterPressed>
+					<OnTextChanged>
 			   			Possessions_Update();
-					</OnEnterPressed>
+					</OnTextChanged>
 				</Scripts>
 			</EditBox>
 			<CheckButton name="POSSESSIONS_CHK_SortName" virtual="true">

@@ -17,7 +17,7 @@ License:
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ]]
 
-local POSSESSIONS_VERSION = "2.0.2g";
+local POSSESSIONS_VERSION = "2.0.3";
 
 local CHARACTER_NUM_ITEMS = 19;
 
