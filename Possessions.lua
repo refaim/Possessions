@@ -762,7 +762,6 @@ function Possessions_Inspect()
 end
 
 function Possessions_ScanInv()
-    --DEFAULT_CHAT_FRAME:AddMessage("Number of Bag Frames: "..NUM_BAG_FRAMES);
     for bagid=0,NUM_BAG_FRAMES,1 do
         Possessions_ReloadBag(bagid);
     end
@@ -792,7 +791,6 @@ function Possessions_ScanMail()
     local iItem = 0;
 
     if( items > 0 ) then
-        --DEFAULT_CHAT_FRAME:AddMessage("Possessions: Scanning mail, items " .. items .. ", time " .. GetTime());
         PossessionsData[realmName][playerName].items[MAIL_CONTAINER] = { };
 
         for index = 1, items, 1 do
@@ -838,7 +836,6 @@ function Possessions_CountMoney()
                 totalMoney = totalMoney + values.money;
             end
         end
-        --DEFAULT_CHAT_FRAME:AddMessage("Money: " .. totalMoney);
         POSSESSIONS_MoneyField_Text:SetText(EnhTooltip.GetTextGSC(totalMoney, true));
     end
 end
@@ -902,7 +899,6 @@ function Possessions_OnEvent(event)
     elseif( event == "BANKFRAME_OPENED" ) then
         Possessions_ScanBank();
     elseif( event == "MAIL_INBOX_UPDATE" ) then
-        --DEFAULT_CHAT_FRAME:AddMessage("Possessions: Scanning mail");
         Possessions_ScanMail();
     elseif( event == "VARIABLES_LOADED" ) then
         Possessions_VarsLoaded();
