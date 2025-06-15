@@ -4,5 +4,3 @@
 ## OptionalDeps: myAddOns, EnhTooltip
 ## SavedVariables: PossessionsData
 Possessions.xml
-
-

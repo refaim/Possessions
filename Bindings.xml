@@ -1,5 +1,5 @@
 <Bindings>
-	<Binding name="Toggle Possessions" header="Possessions">
-		Possessions_Toggle();
-	</Binding>
+    <Binding name="Toggle Possessions" header="Possessions">
+        Possessions_Toggle();
+    </Binding>
 </Bindings>
